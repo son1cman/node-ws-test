@@ -1,18 +1,17 @@
 {
-  "name": "node-ws-test",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku-examples/node-ws-test.git"
-  },
-  "dependencies": {
-    "express": "^4.4.5",
-    "ws": "0.4.x"
-  },
-  "engines": {
-    "node": "0.10.x"
-  },
+  "name": "testbot",
+  "version": "1.0.0",
+  "description": "TestBot Server App",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
+  },
+  "author": "Adam Jodlowski",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
   }
 }
