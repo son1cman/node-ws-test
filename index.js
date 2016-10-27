@@ -40,6 +40,8 @@ app.post('/webhook', function (req, res) {
             console.log("Postback received: " + JSON.stringify(event.postback));
         }
             
+        }else if (event.postback) {
+            console.log("Postback received: " + JSON.stringify(event.postback));
         }
     }
     res.sendStatus(200);
