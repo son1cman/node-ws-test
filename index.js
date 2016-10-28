@@ -154,7 +154,7 @@ function sendGenericcMessage(recipientId) {
               title: "Comprar Camisa"
             }, {
               type: "postback",
-              title: "Call Postback(Dev)",
+              title: "Productos similares",
               payload: "Payload for first bubble",
             }],
           }, 
@@ -169,7 +169,7 @@ function sendGenericcMessage(recipientId) {
               title: "Comprar Camisa"
             }, {
               type: "postback",
-              title: "Call Postback(Dev)",
+              title: "Productos similares",
               payload: "Payload for first bubble",
             }],
           },
@@ -184,7 +184,7 @@ function sendGenericcMessage(recipientId) {
               title: "Comprar Camisa"
             }, {
               type: "postback",
-              title: "Call Postback(Dev)",
+              title: "Productos similares",
               payload: "Payload for first bubble",
             }],
           }
