@@ -31,7 +31,7 @@ app.post('/webhook', function (req, res) {
             if(!EcomMessage(event.sender.id, event.message.text)) {
             if (!kittenMessage(event.sender.id, event.message.text)) {
                 
-                    sendMessage(event.sender.id, {text: "Protolab: " + event.message.text});
+                    sendMessage(event.sender.id, {text: "" + event.message.text});
                     //sendGenericMessage(event.sender.id);
                 
             }
@@ -215,7 +215,7 @@ function EcomMessage(recipientId, text) {
     text = text || "";
     var values = text.split(' ');
     
-    if (values[0] === 'camisas') {
+    if (values[0] == 'camisas' || values[0] == 'camisa') {
         
             
          sendGenericcMessage(recipientId);
