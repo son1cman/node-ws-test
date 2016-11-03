@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000));
 
-// Server frontpage2
+// Server frontpage
 app.get('/', function (req, res) {
     res.send('This is Aureo.io Server');
     
@@ -28,16 +28,10 @@ app.post('/webhook', function (req, res) {
     for (i = 0; i < events.length; i++) {
         var event = events[i];
         if (event.message && event.message.text) {
-
-            
             if(!EcomMessage(event.sender.id, event.message.text)) {
             if (!kittenMessage(event.sender.id, event.message.text)) {
                 
-                                if(event.message.text == 'Hola'){
-                sendMessage(event.sender.id, {text: "Hola, bienvenido a coexport. Escribe el producto o servicio que desees y yo podre asistirte"});
-            }else{
-                    sendMessage(event.sender.id, {text: "" + event.message.text});
-            }
+                    sendMessage(event.sender.id, {text: "Protolab: " + event.message.text});
                     //sendGenericMessage(event.sender.id);
                 
             }
@@ -154,7 +148,7 @@ function sendGenericcMessage(recipientId) {
               title: "Comprar Camisa"
             }, {
               type: "postback",
-              title: "Productos similares",
+              title: "Call Postback(Dev)",
               payload: "Payload for first bubble",
             }],
           }, 
@@ -169,7 +163,7 @@ function sendGenericcMessage(recipientId) {
               title: "Comprar Camisa"
             }, {
               type: "postback",
-              title: "Productos similares",
+              title: "Call Postback(Dev)",
               payload: "Payload for first bubble",
             }],
           },
@@ -184,7 +178,7 @@ function sendGenericcMessage(recipientId) {
               title: "Comprar Camisa"
             }, {
               type: "postback",
-              title: "Productos similares",
+              title: "Call Postback(Dev)",
               payload: "Payload for first bubble",
             }],
           }
@@ -221,7 +215,7 @@ function EcomMessage(recipientId, text) {
     text = text || "";
     var values = text.split(' ');
     
-    if (values[0] == 'camisas' || values[0] == 'camisa') {
+    if (values[0] === 'camisas') {
         
             
          sendGenericcMessage(recipientId);
