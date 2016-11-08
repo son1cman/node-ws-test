@@ -31,7 +31,13 @@ app.post('/webhook', function (req, res) {
             if(!EcomMessage(event.sender.id, event.message.text)) {
             if (!kittenMessage(event.sender.id, event.message.text)) {
                 
-                    sendMessage(event.sender.id, {text: "Protolab: " + event.message.text});
+                if(event.message.text === 'hola'){
+                    sendMessage(event.sender.id, {text: "Hola bienvenido a Pollo campestre, que promocion deseas para el dia de hoy?"});
+      
+                }else{
+                  sendMessage(event.sender.id, {text: "PolloCampestre: " + event.message.text});
+                }
+                    
                     //sendGenericMessage(event.sender.id);
                 
             }
@@ -190,6 +196,69 @@ function sendGenericcMessage(recipientId) {
     sendMessageG(recipientId, messageData);
   //callSendAPI(messageData);
 }
+function sendPolloMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Camisa lacoste",
+            subtitle: "Aquí, el cuello rompe las normas, abotonándose en la espalda. Y el cuello ya no es de un solo tono: decorado con rayas, combina cuatro colores para obtener un resultado moderno y femenino a la vez",
+            item_url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",               
+            image_url: "http://image1.lacoste.com/sits_pod14/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/es/dw55e8b0d7/PF8866_4GX_20.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",
+              title: "Comprar Camisa"
+            }, {
+              type: "postback",
+              title: "Call Postback(Dev)",
+              payload: "Payload for first bubble",
+            }],
+          }, 
+                     {
+            title: "Camisa lacoste 2 ",
+            subtitle: "Aquí, el cuello rompe las normas, abotonándose en la espalda. Y el cuello ya no es de un solo tono: decorado con rayas, combina cuatro colores para obtener un resultado moderno y femenino a la vez",
+            item_url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",               
+            image_url: "http://image1.lacoste.com/sits_pod14/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/es/dw88fd73d7/PF8866_4GX_24.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",
+              title: "Comprar Camisa"
+            }, {
+              type: "postback",
+              title: "Call Postback(Dev)",
+              payload: "Payload for first bubble",
+            }],
+          },
+                     {
+            title: "Camisa lacoste ",
+            subtitle: "Aquí, el cuello rompe las normas, abotonándose en la espalda. Y el cuello ya no es de un solo tono: decorado con rayas, combina cuatro colores para obtener un resultado moderno y femenino a la vez",
+            item_url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",               
+            image_url: "http://image1.lacoste.com/sits_pod14/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/es/dw3862b27c/AF4511_4A8_20.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",
+              title: "Comprar Camisa"
+            }, {
+              type: "postback",
+              title: "Call Postback(Dev)",
+              payload: "Payload for first bubble",
+            }],
+          }
+                    ]
+        }
+      }
+    }
+  };  
+    sendMessageG(recipientId, messageData);
+  //callSendAPI(messageData);
+}
 
 // send rich message with kitten
 function kittenMessage(recipientId, text) {
@@ -215,13 +284,19 @@ function EcomMessage(recipientId, text) {
     text = text || "";
     var values = text.split(' ');
     
-    if (values[0] === 'camisas') {
+    if (values[0] === '#promocionnavidena') {
         
             
          sendGenericcMessage(recipientId);
             
             return true;
         
+    }
+    if (values[0] === '#promociondeldia') {
+
+          sendPolloMessage(recipientId);
+            
+            return true;
     }
     
     return false;
