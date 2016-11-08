@@ -207,29 +207,29 @@ function sendPolloMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "Camisa lacoste",
-            subtitle: "Aquí, el cuello rompe las normas, abotonándose en la espalda. Y el cuello ya no es de un solo tono: decorado con rayas, combina cuatro colores para obtener un resultado moderno y femenino a la vez",
-            item_url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",               
-            image_url: "http://image1.lacoste.com/sits_pod14/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/es/dw55e8b0d7/PF8866_4GX_20.jpg",
+            title: "Banquete",
+            subtitle: "6 piezas + 6 complementos!! Saca la cuenta aqui te sale mejor!",
+            item_url: "http://pollocampestre.com/promociones/",               
+            image_url: "http://pollocampestre.com/wp-content/themes/cheseemoon/inc/tmb/?src=http://pollocampestre.com/archivos/2016/11/Promo6-6-04.png",
             buttons: [{
               type: "web_url",
-              url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",
-              title: "Comprar Camisa"
+              url: "http://pollocampestre.com/promociones/",
+              title: "Comer ya!!"
             }, {
               type: "postback",
-              title: "Call Postback(Dev)",
+              title: "Sugerir a amigos!",
               payload: "Payload for first bubble",
             }],
           }, 
                      {
-            title: "Camisa lacoste 2 ",
-            subtitle: "Aquí, el cuello rompe las normas, abotonándose en la espalda. Y el cuello ya no es de un solo tono: decorado con rayas, combina cuatro colores para obtener un resultado moderno y femenino a la vez",
-            item_url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",               
-            image_url: "http://image1.lacoste.com/sits_pod14/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/es/dw88fd73d7/PF8866_4GX_24.jpg",
+            title: "Domidelicioso!",
+            subtitle: "8 piezas + 4 ensaladas + 1 orden de pan con ajo + 1 soda",
+            item_url: "http://pollocampestre.com/promociones/",               
+            image_url: "http://pollocampestre.com/wp-content/themes/cheseemoon/inc/tmb/?src=http://pollocampestre.com/archivos/2016/06/adaptacion2-1.png",
             buttons: [{
               type: "web_url",
-              url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",
-              title: "Comprar Camisa"
+              url: "http://pollocampestre.com/promociones/",
+              title: "Comer ya!"
             }, {
               type: "postback",
               title: "Call Postback(Dev)",
@@ -237,14 +237,14 @@ function sendPolloMessage(recipientId) {
             }],
           },
                      {
-            title: "Camisa lacoste ",
-            subtitle: "Aquí, el cuello rompe las normas, abotonándose en la espalda. Y el cuello ya no es de un solo tono: decorado con rayas, combina cuatro colores para obtener un resultado moderno y femenino a la vez",
-            item_url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",               
-            image_url: "http://image1.lacoste.com/sits_pod14/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/es/dw3862b27c/AF4511_4A8_20.jpg",
+            title: "2 piezas gratis!!!",
+            subtitle: "Aprovecha!! al tercer pedido 2 piezas gratis",
+            item_url: "http://pollocampestre.com/promociones/",               
+            image_url: "http://pollocampestre.com/wp-content/themes/cheseemoon/inc/tmb/?src=http://pollocampestre.com/archivos/2016/04/webcampesrtre3-1.png&w=400&zc=1",
             buttons: [{
               type: "web_url",
-              url: "http://global.lacoste.com/es/lacoste/mujer/ropa/polos/women%27s-slim-fit-stretch-pique-polo-with-stripe-accents/PF8866-00.html",
-              title: "Comprar Camisa"
+              url: "http://pollocampestre.com/promociones/",
+              title: "Promocion ya!"
             }, {
               type: "postback",
               title: "Call Postback(Dev)",
@@ -292,7 +292,7 @@ function EcomMessage(recipientId, text) {
             return true;
         
     }
-    if (values[0] === '#promociondeldia') {
+    if (values[0] === 'promociones') {
 
           sendPolloMessage(recipientId);
             
