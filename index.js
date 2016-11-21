@@ -232,7 +232,7 @@ function sendPolloMessage(recipientId) {
               title: "Comer ya!"
             }, {
               type: "postback",
-              title: "Call Postback(Dev)",
+              title: "En restaurantes",
               payload: "Payload for first bubble",
             }],
           },
@@ -244,10 +244,10 @@ function sendPolloMessage(recipientId) {
             buttons: [{
               type: "web_url",
               url: "http://pollocampestre.com/promociones/",
-              title: "Promocion ya!"
+              title: "Comprar ya!"
             }, {
               type: "postback",
-              title: "Call Postback(Dev)",
+              title: "A domicilio",
               payload: "Payload for first bubble",
             }],
           }
@@ -284,7 +284,7 @@ function EcomMessage(recipientId, text) {
     text = text || "";
     var values = text.split(' ');
     
-    if (values[0] === '#promocionnavidena') {
+    if (values[0] === '#promocion') {
         
             
          sendGenericcMessage(recipientId);
@@ -295,6 +295,12 @@ function EcomMessage(recipientId, text) {
     if (values[0] === 'promociones') {
 
           sendPolloMessage(recipientId);
+            
+            return true;
+    }
+    if (values[0] === 'tech') {
+
+          sendGenericMessage(recipientId);
             
             return true;
     }
