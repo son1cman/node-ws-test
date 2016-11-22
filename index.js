@@ -72,6 +72,37 @@ function sendMessage(recipientId, message) {
     });
 };
 
+
+function sendQuickR(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      
+
+        text:"Menu Campestre",
+        quick_repies:[
+        {
+          content_type:"text",
+          title:"Red",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        },
+        {
+          content_type:"text",
+          title:"Green",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        }
+        ]
+
+        
+      
+    }
+  };  
+    sendMessageG(recipientId, messageData);
+  //callSendAPI(messageData);
+}
+
 function sendMessageG(recipientId, message) {
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -300,7 +331,8 @@ function EcomMessage(recipientId, text) {
     }
     if (values[0] === 'tech') {
 
-          sendGenericMessage(recipientId);
+          sendQuickR(recipientId);
+          //sendGenericMessage(recipientId);
             
             return true;
     }
