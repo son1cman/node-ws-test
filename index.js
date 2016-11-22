@@ -82,7 +82,7 @@ function sendQuickR(recipientId) {
       
 
         text:"Menu Campestre",
-        quick_repies:[
+        quick_replies:[
         {
           content_type:"text",
           title:"Red",
