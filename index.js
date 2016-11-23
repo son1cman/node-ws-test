@@ -32,11 +32,28 @@ app.post('/webhook', function (req, res) {
             if (!kittenMessage(event.sender.id, event.message.text)) {
                 
                 if(event.message.text === 'hola'){
-                    sendMessage(event.sender.id, {text: "Hola bienvenido a Pollo campestre, que promocion deseas para el dia de hoy?"});
+                    //sendMessage(event.sender.id, {text: "Hola bienvenido a Pollo campestre, que promocion deseas para el dia de hoy?"});
+                    sendQuickR(event.sender.id);
       
-                }else{
-                  sendMessage(event.sender.id, {text: "PolloCampestre: " + event.message.text});
                 }
+                if(event.message.text === 'Mesero!!'){
+                  sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
+                }
+                if(event.message.text === 'Sugerencias'){
+                 sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
+                }
+                if(event.message.text === 'Atencion al cliente'){
+                 sendMessage(event.sender.id, {text: ""});  
+
+                }
+                if(event.message.text === 'Restaurantes'){
+                 sendMessage(event.sender.id, {text: "Activa tu GPS para poder mostrarte el pollo campestre mas cercano"});  
+
+                }
+
+                /*else{
+                  sendMessage(event.sender.id, {text: "PolloCampestre: " + event.message.text});
+                }*/
                     
                     //sendGenericMessage(event.sender.id);
                 
