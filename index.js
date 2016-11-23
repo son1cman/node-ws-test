@@ -37,7 +37,7 @@ app.post('/webhook', function (req, res) {
       
                 }
                 if(event.message.text === '.'){
-                  sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
+                  
                   sendQuickSug(event.sender.id);
                 }
                 if(event.message.text === ','){
