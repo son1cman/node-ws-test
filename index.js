@@ -81,18 +81,34 @@ function sendQuickR(recipientId) {
     message: {
       
 
-        text:"Menu Campestre",
+        text:"Hola bienvenido a Pollo campestre(2121-2828), que promocion deseas para el dia de hoy?",
         quick_replies:[
         {
           content_type:"text",
-          title:"Red",
+          title:"Mesero!!",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
         },
         {
           content_type:"text",
-          title:"Green",
+          title:"Promociones",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:"Sugerencias",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:"Atencion al cliente",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:"Restaurantes",
           payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
         }
+
         ]
 
         
