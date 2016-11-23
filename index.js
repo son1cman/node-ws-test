@@ -232,9 +232,10 @@ function sendQuickV(recipientId) {
     },
     message: {
       
-        attachment:{type:"video",
+        attachment:{
+          type:"video",
         payload:{
-          url:"https://www.youtube.com/watch?v=k6Wa_XzDqfs"
+          url:"https://www.facebook.com/PolloCampestreSV/videos/10153863299918499/"
         }
       }
 
