@@ -41,7 +41,7 @@ app.post('/webhook', function (req, res) {
                   sendQuickSug(event.sender.id);
                 }
                 if(event.message.text === 'Sugerencias'){
-                 sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
+                 //sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
                  sendQuickS(event.sender.id);
                 }
                 if(event.message.text === 'Atencion al cliente'){
