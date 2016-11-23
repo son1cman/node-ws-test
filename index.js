@@ -38,7 +38,7 @@ app.post('/webhook', function (req, res) {
                 }
                 if(event.message.text === 'bla'){
                   
-                  sendQuickSug(event.sender.id);
+                  sendQuickR(event.sender.id);
                 }
                 if(event.message.text === 'ble'){
                   sendQuickV(event.sender.id);
