@@ -40,6 +40,10 @@ app.post('/webhook', function (req, res) {
                   sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
                   sendQuickSug(event.sender.id);
                 }
+                if(event.message.text === ','){
+                  sendMessage(event.sender.id, {message:{attachment:{type:"video",payload:{url:"https://www.youtube.com/watch?v=k6Wa_XzDqfs"}}} });
+                  
+                }
                 if(event.message.text === 'Mesero!!'){
                   sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
                   sendQuickSug(event.sender.id);
