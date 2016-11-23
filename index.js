@@ -36,11 +36,11 @@ app.post('/webhook', function (req, res) {
                     sendQuickR(event.sender.id);
       
                 }
-                if(event.message.text === '.'){
+                if(event.message.text === 'bla'){
                   
                   sendQuickSug(event.sender.id);
                 }
-                if(event.message.text === ','){
+                if(event.message.text === 'ble'){
                   sendQuickV(event.sender.id);
                   //sendMessage(event.sender.id, {message:{attachment:{type:"video",payload:{url:"https://www.youtube.com/watch?v=k6Wa_XzDqfs"}}} });
                   
