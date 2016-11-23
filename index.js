@@ -41,12 +41,13 @@ app.post('/webhook', function (req, res) {
                   sendQuickSug(event.sender.id);
                 }
                 if(event.message.text === ','){
-                  sendMessage(event.sender.id, {message:{attachment:{type:"video",payload:{url:"https://www.youtube.com/watch?v=k6Wa_XzDqfs"}}} });
+                  sendQuickV(event.sender.id);
+                  //sendMessage(event.sender.id, {message:{attachment:{type:"video",payload:{url:"https://www.youtube.com/watch?v=k6Wa_XzDqfs"}}} });
                   
                 }
                 if(event.message.text === 'Mesero!!'){
                   sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
-                  sendQuickSug(event.sender.id);
+                  
                 }
                 if(event.message.text === 'Sugerencias'){
                  //sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
@@ -54,12 +55,12 @@ app.post('/webhook', function (req, res) {
                 }
                 if(event.message.text === 'Atencion al cliente'){
                  sendMessage(event.sender.id, {text: "Puede llamarnos al 2623-5000"});  
-                 sendQuickSug(event.sender.id);
+                 
 
                 }
                 if(event.message.text === 'Restaurantes'){
                  sendMessage(event.sender.id, {text: "Activa tu GPS para poder mostrarte el pollo campestre mas cercano"});  
-                 sendQuickSug(event.sender.id);
+                 
 
                 }
 
@@ -141,7 +142,7 @@ function sendQuickSug(recipientId) {
       id: recipientId
     },
     message: {
-      
+      text:"",
         quick_replies:[
         {
           content_type:"text",
@@ -215,6 +216,27 @@ function sendQuickR(recipientId) {
         }
 
         ]
+
+        
+      
+    }
+  };  
+    sendMessageG(recipientId, messageData);
+  //callSendAPI(messageData);
+}
+
+function sendQuickV(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      
+        attachment:{type:"video",
+        payload:{
+          url:"https://www.youtube.com/watch?v=k6Wa_XzDqfs"
+        }
+      }
 
         
       
