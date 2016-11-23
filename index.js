@@ -31,17 +31,21 @@ app.post('/webhook', function (req, res) {
             if(!EcomMessage(event.sender.id, event.message.text)) {
             if (!kittenMessage(event.sender.id, event.message.text)) {
                 
-                if(event.message.text === 'hola'){
+                if(event.message.text === 'hola' || event.message.text === 'Hola'){
                     //sendMessage(event.sender.id, {text: "Hola bienvenido a Pollo campestre, que promocion deseas para el dia de hoy?"});
                     sendQuickR(event.sender.id);
       
+                }
+                if(event.message.text === '.'){
+                  sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
+                  sendQuickSug(event.sender.id);
                 }
                 if(event.message.text === 'Mesero!!'){
                   sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
                   sendQuickSug(event.sender.id);
                 }
                 if(event.message.text === 'Sugerencias'){
-                 sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
+                 //sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
                  sendQuickS(event.sender.id);
                 }
                 if(event.message.text === 'Atencion al cliente'){
@@ -100,7 +104,7 @@ function sendQuickS(recipientId) {
     message: {
       
 
-        text:"Encuesta ejemplo de pregunta:",
+        text:"Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo Encuesta ejemplo de pregunta:",
         quick_replies:[
         {
           content_type:"text",
