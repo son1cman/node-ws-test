@@ -38,16 +38,20 @@ app.post('/webhook', function (req, res) {
                 }
                 if(event.message.text === 'Mesero!!'){
                   sendMessage(event.sender.id, {text: "En breve seras atendido por un mesero!!"});
+                  sendQuickSug(event.sender.id);
                 }
                 if(event.message.text === 'Sugerencias'){
                  sendMessage(event.sender.id, {text: "Tus comentarios son de gran interes para nosotros!!! gracias por mejorar nuestro servicio, deja tu sugerencia en la parte de abajo"}); 
+                 sendQuickS(event.sender.id);
                 }
                 if(event.message.text === 'Atencion al cliente'){
-                 sendMessage(event.sender.id, {text: ""});  
+                 sendMessage(event.sender.id, {text: "Puede llamarnos al 2623-5000"});  
+                 sendQuickSug(event.sender.id);
 
                 }
                 if(event.message.text === 'Restaurantes'){
                  sendMessage(event.sender.id, {text: "Activa tu GPS para poder mostrarte el pollo campestre mas cercano"});  
+                 sendQuickSug(event.sender.id);
 
                 }
 
@@ -88,8 +92,84 @@ function sendMessage(recipientId, message) {
         }
     });
 };
+function sendQuickS(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      
 
+        text:"Encuesta ejemplo de pregunta:",
+        quick_replies:[
+        {
+          content_type:"text",
+          title:":)",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        },
+        {
+          content_type:"text",
+          title:"Normal",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:":(",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        }
 
+        ]
+
+        
+      
+    }
+  };  
+    sendMessageG(recipientId, messageData);
+  //callSendAPI(messageData);
+}
+function sendQuickSug(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      
+        quick_replies:[
+        {
+          content_type:"text",
+          title:"Mesero!!",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        },
+        {
+          content_type:"text",
+          title:"Promociones",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:"Sugerencias",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:"Atencion al cliente",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        },
+        {
+          content_type:"text",
+          title:"Restaurantes",
+          payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        }
+
+        ]
+
+        
+      
+    }
+  };  
+    sendMessageG(recipientId, messageData);
+  //callSendAPI(messageData);
+}
 function sendQuickR(recipientId) {
   var messageData = {
     recipient: {
