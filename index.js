@@ -339,7 +339,7 @@ function EcomMessage(recipientId, text) {
             return true;
         
     }
-    if (values[0] === 'promociones') {
+    if (values[0] === 'Promociones') {
 
           sendPolloMessage(recipientId);
             
