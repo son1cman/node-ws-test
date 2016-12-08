@@ -9,7 +9,10 @@ app.listen((process.env.PORT || 3000));
 
 // Server frontpage
 app.get('/', function (req, res) {
-    res.send('This is Aureo.io Server');
+    res.send('<html>' + '<body>' 
+      + '<h2>Spectacular Mountain</h2>' +
+       '<img src="http://i.imgur.com/DosQktr.jpg" alt="Mountain View" style="width:304px;height:228px;">'+
+       '</body>' + '</html>');
     
 });
 
