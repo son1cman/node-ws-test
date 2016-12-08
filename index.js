@@ -11,7 +11,7 @@ app.listen((process.env.PORT || 3000));
 app.get('/', function (req, res) {
     res.send('<html>' + '<body>' 
       + '<h2>Spectacular Mountain</h2>' +
-       '<img src="http://i.giphy.com/l2Sq5pd3utN3LgPqo.gif alt="Mountain View" style="width:304px;height:228px;">'+
+       '<img src="http://i.giphy.com/l2Sq5pd3utN3LgPqo.gif" alt="Mountain View" style="width:304px;height:228px;">'+
        '</body>' + '</html>');
     
 });
