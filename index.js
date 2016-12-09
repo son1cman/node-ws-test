@@ -8,6 +8,11 @@ app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000));
 
 // Server frontpage
+app.get('/favicon.ico', function (req, res) {
+    
+    
+});
+
 app.get('/', function (req, res) {
     res.send('<html>' + '<body>' 
       + '<h2>Spectacular Mountain</h2>' +
@@ -34,7 +39,7 @@ app.get('/AAA0B', function (req, res) {
        '<img src="http://i.imgur.com/DosQktr.jpg" alt="Mountain View" style="width:304px;height:228px;">'+
        '</body>' + '</html>');
     xD++;
-    console.log('Visitor number:' + xD);
+    console.log('Visitor number:' + xD + " at ip: " + req.connection.remoteAddress);
     
 });
 
