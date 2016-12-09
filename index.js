@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
-
+var xD = 1;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.listen((process.env.PORT || 3000));
@@ -16,10 +16,25 @@ app.get('/', function (req, res) {
     
 });
 app.get('/AAA01', function (req, res) {
-    res.send('<html>' + '<body>' 
+     res.send('<html>' + '<body>' 
       + '<h2>Spectacular Mountain</h2>' +
        '<img src="http://i.giphy.com/l2Sq5pd3utN3LgPqo.gif" alt="Mountain View" style="width:304px;height:228px;">'+
        '</body>' + '</html>');
+        
+    
+    
+});
+app.get('/AAA0B', function (req, res) {
+/*    res.send('<html>' + '<body>' 
+      + '<h2>Spectacular Mountain</h2>' +
+       '<img src="http://i.giphy.com/l2Sq5pd3utN3LgPqo.gif" alt="Mountain View" style="width:304px;height:228px;">'+
+       '</body>' + '</html>');*/
+           res.send('<html>' + '<body>' 
+       +
+       '<img src="http://i.imgur.com/DosQktr.jpg" alt="Mountain View" style="width:304px;height:228px;">'+
+       '</body>' + '</html>');
+    xD++;
+    console.log('Visitor number:' + xD);
     
 });
 
