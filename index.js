@@ -39,7 +39,7 @@ app.get('/AAA0B', function (req, res) {
        '<img src="http://i.imgur.com/DosQktr.jpg" alt="Mountain View" style="width:304px;height:228px;">'+
        '</body>' + '</html>');
     xD++;
-    console.log('Visitor number:' + xD + " at ip: " + req.connection.remoteAddress);
+    console.log('Visitor number:' + xD + " at ip: " + req.ip);
     
 });
 
