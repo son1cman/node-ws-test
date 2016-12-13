@@ -37,8 +37,8 @@ app.get('/AAA0B', function (req, res) {
            res.send('<html>' + '<body>' 
        +
         '<h2>Random meme 01 and insurance meme policy</h2>' +
-       '<img src="http://i.imgur.com/7DBh3pu.jpg" alt="Mountain View" style="width:304px;height:228px;">'+
-       + '<h2>Random meme 01 and insurance meme policy</h2>'+
+       '<img src="http://i.imgur.com/7DBh3pu.jpg" alt="Mountain View" style="width:609px;height:609px;">'+
+       '<h2>Random meme 01 and insurance meme policy</h2>'+
        '</body>' + '</html>');
     xD++;
     console.log('Visitor number:' + xD + " at ip: " + req.headers['x-forwarded-for']);
