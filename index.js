@@ -67,6 +67,9 @@ app.post('/webhook', function (req, res) {
                     //sendMessage(event.sender.id, {text: "Hola bienvenido a Pollo campestre, que promocion deseas para el dia de hoy?"});
                     sendQuickR(event.sender.id);
       
+                }else{
+                  sendNewsMessage(event.sender.id);
+
                 }
                 if(event.message.text === 'bla'){
                   
@@ -466,6 +469,60 @@ function sendPolloMessage(recipientId) {
     sendMessageG(recipientId, messageData);
   //callSendAPI(messageData);
 }
+
+function sendNewsMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [          {
+            title: "Domidelicioso!",
+            subtitle: "8 piezas + 4 ensaladas + 1 orden de pan con ajo + 1 soda",
+            item_url: "http://cnnespanol.cnn.com/2017/02/10/corte-falla-contra-donald-trump-sobre-el-decreto-inmigratorio-que-sigue/",               
+            image_url: "http://www.nbc.com/the-tonight-show/content/sites/nbcutsjf/files/images/2016/09/15/nup_175387_1204.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "http://cnnespanol.cnn.com/2017/02/10/corte-falla-contra-donald-trump-sobre-el-decreto-inmigratorio-que-sigue/",
+              title: "Ampliamos"
+            }, {
+              type: "postback",
+              title: "URGENTE",
+              payload: "Payload for first bubble",
+            }],
+          },
+
+
+          {
+            title: "Otan vs Rusia",
+            subtitle: "6 piezas + 6 complementos!! Saca la cuenta aqui te sale mejor!",
+            item_url: "https://actualidad.rt.com/actualidad/230732-letonia-otan-marcha-armas-frontera-rusia",               
+            image_url: "http://www.slate.com/content/dam/slate/blogs/moneybox/2015/08/16/donald_trump_on_immigration_build_border_fence_make_mexico_pay_for_it/483208412-real-estate-tycoon-donald-trump-flashes-the-thumbs-up.jpg.CROP.promo-xlarge2.jpg",
+            buttons: [{
+              type: "web_url",
+              url: "https://actualidad.rt.com/actualidad/230732-letonia-otan-marcha-armas-frontera-rusia",
+              title: "Ver Ahora!"
+            }, {
+              type: "postback",
+              title: "Sugerir a amigos!",
+              payload: "Payload for first bubble",
+            }],
+          }
+           
+                   
+                    ]
+        }
+      }
+    }
+  };  
+    sendMessageG(recipientId, messageData);
+  //callSendAPI(messageData);
+}
+
 
 // send rich message with kitten
 function kittenMessage(recipientId, text) {
